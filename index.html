@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>SkyCast – Weather Forecasting</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <a class="logo" href="#home">Sky<span>Cast</span></a>
+  <nav id="nav">
+    <a href="#forecast">Forecast</a><a href="#learn">Learn</a><a href="#quiz">Quiz</a><a href="#contact">Contact</a>
+    <button class="icon-btn" id="theme" aria-label="Toggle theme">🌓</button>
+  </nav>
+  <button class="icon-btn menu" id="menu" aria-label="Menu">☰</button>
+</header>
+
+<main id="home">
+  <div class="hero"><div class="wrap">
+    <h1>Weather <span style="color:var(--accent)">Forecasting</span></h1>
+    <p class="lead">Pick a city and see the current conditions and a 5-day outlook.</p>
+    <div class="controls">
+      <select id="city" aria-label="City"></select>
+      <div class="seg"><button id="uC" class="on">°C</button><button id="uF">°F</button></div>
+    </div>
+    <div class="now" id="now"></div>
+    <p class="note">Sample data for demonstration. A live version would fetch it from a weather API.</p>
+  </div></div>
+
+  <section id="today">
+    <h2>Today by Hour</h2>
+    <p class="sub">Estimated temperature through the day.</p>
+    <div class="panel"><div id="chart"></div><p class="tipline" id="tip"></p></div>
+  </section>
+
+  <section id="forecast">
+    <h2>5-Day Forecast</h2>
+    <p class="sub" id="fsub"></p>
+    <div class="days" id="days"></div>
+  </section>
+
+  <section id="learn">
+    <h2>Weather Science</h2>
+    <p class="sub">How forecasters read the sky. Click a card for more.</p>
+    <div class="filters" id="filters"></div>
+    <div class="grid" id="grid"></div>
+  </section>
+
+  <section id="quiz">
+    <h2>Weather Quiz</h2>
+    <p class="sub">Test your forecasting knowledge.</p>
+    <div class="quiz">
+      <small id="qcount"></small>
+      <h3 id="qtext"></h3>
+      <div class="opts" id="opts"></div>
+      <button class="btn" id="next" hidden>Next</button>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p class="sub">A form with live JavaScript validation.</p>
+    <form id="form" novalidate>
+      <div><label for="name">Name</label><input id="name" autocomplete="name"><div class="err"></div></div>
+      <div><label for="email">Email</label><input id="email" type="email" autocomplete="email"><div class="err"></div></div>
+      <div><label for="text">Message</label><textarea id="text" rows="4"></textarea><div class="err"></div></div>
+      <button class="btn" type="submit">Send message</button>
+      <div class="msg" id="ok"></div>
+    </form>
+  </section>
+</main>
+
+<dialog id="dlg">
+  <div style="font-size:3rem" id="dIc"></div>
+  <h2 id="dName"></h2>
+  <p id="dText" style="color:var(--muted)"></p>
+  <button class="btn" id="close">Close</button>
+</dialog>
+
+<footer>© 2026 SkyCast · Web Technology Project · HTML · CSS · JavaScript</footer>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
